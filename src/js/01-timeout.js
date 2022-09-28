@@ -7,30 +7,24 @@ import '../css/common.css';
 // console.log('До вызова setTimeout');
 
 // setTimeout(() => {
-//   console.log('1 - Внутри callback для setTimeout');
+//   console.log('Внутри callback для setTimeout');
 // }, 2000);
 
-// setTimeout(() => {
-//   console.log('2 - Внутри callback для setTimeout');
-// }, 1000);
-
-// console.log('После вызова setTimeout');
-
+// console.log('После  вызова setTimeout');
 /*
  * Очистка таймаута с clearTimeout(timeoutId)
  */
 
 const logger = time => {
-  console.log(`Лог через ${time}ms, потому что не отменили таймаут`);
+  console.log(`Лог через ${time}ms, потому что не отменили setTimeout`);
 };
 
 const timerId = setTimeout(logger, 2000, 2000);
 
-console.log(timerId);
+const shouldCancelTime = Math.random() > 0.3;
 
-const shouldCancelTimer = Math.random() > 0.3;
-console.log(shouldCancelTimer);
+console.log(shouldCancelTime);
 
-if (shouldCancelTimer) {
+if (shouldCancelTime) {
   clearTimeout(timerId);
 }

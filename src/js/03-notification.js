@@ -8,7 +8,9 @@ import '../css/common.css';
  */
 
 const NOTIFICATION_DELAY = 3000;
+
 let timeoutId = null;
+
 const refs = {
   notification: document.querySelector('.js-alert'),
 };
@@ -29,7 +31,7 @@ function showNotification() {
   refs.notification.classList.add('is-visible');
 
   timeoutId = setTimeout(() => {
-    console.log('Закрываем алерт автоматически чтобы не висел');
+    console.log('нужно закрывать алерт');
     hideNotification();
   }, NOTIFICATION_DELAY);
 }
